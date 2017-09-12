@@ -2,13 +2,26 @@ Homework for Chapter 2 of Learning MySQL (2006 edition), from p. 94:
 
 Exercises:
 1) What is command completion?
+    
+    Command completion is a feature by which one starts to type the name of a command/filr/directory at a prompt, then presses tab to cycle through possible names that couls match what they are typing.
 
 2) What are the relative advantages of installing MySQL using the package,
  directory archive (tarball or "no-install"), or compiled methods?
 
+    Package install: Usually easier, takes care of most other prerequisits (user/group creation, tools useful for running MySQL).
+
+    Tarball install: can customize where you want your binaries installed.
+
+    Compiled method: Compiling allows one to build a custom binary with parameters of their choosing (install path / what port MySQL will run on / location of data files / etc...)
+
 3) How do you verify the integrity of downloaded packages?
 
+    use the md5sum, run against the package you have downloaded and compare the output to the md5sum found on the downloads page
+
+
 4) How do you add the MySQL bin directory to the operating system path?
+
+    For the user running the command, add the location of the MySQL bin directory to the PATH environment variable. Edit .bashrcv / .bash_profile or the apprpriate file for your shell and add export PATH=$PATH:/usr/local/mysql/bin (or whatever the path to the binaries is...).
 
 Additional Exercises (not in the book): 
 1) Document how you installed MySQL and any issues you came across with installation. 
