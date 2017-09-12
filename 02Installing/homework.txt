@@ -27,7 +27,11 @@ Additional Exercises (not in the book):
 1) Document how you installed MySQL and any issues you came across with installation. 
  (The goal is to be easy to install it again on a similar machine.)
 
+ I'm on a Mac, so I used Homebrew.  Easy peasy, no issues with installation! 
+    brew install mysql
+
 2) Document where important files should be.
+
 
 Do not forget to do a pull request when your homework is complete.
 http://www.meetup.com/Virtual-Tech-Self-Study/messages/boards/thread/29963152/
