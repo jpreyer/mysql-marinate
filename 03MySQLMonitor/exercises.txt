@@ -1,9 +1,90 @@
 1. What do we mean when we say that MySQL has a client-server architecture?
 
+    Clients connect to the Mysql server to read and store data.  Clients can be the MySQL monitor that ships with the MySQL server or, applications written in various languages.
+
 2. Use the monitor help to look up information on the SELECT statement. (We’ll discuss SELECT in detail in Chapter 5.)
+
+mysql> help SELECT;
+Name: 'SELECT'
+Description:
+Syntax:
+SELECT
+    [ALL | DISTINCT | DISTINCTROW ]
+      [HIGH_PRIORITY]
+      [STRAIGHT_JOIN]
+      [SQL_SMALL_RESULT] [SQL_BIG_RESULT] [SQL_BUFFER_RESULT]
+      [SQL_CACHE | SQL_NO_CACHE] [SQL_CALC_FOUND_ROWS]
+    select_expr [, select_expr ...]
+    [FROM table_references
+      [PARTITION partition_list]
+    [WHERE where_condition]
+    [GROUP BY {col_name | expr | position}
+      [ASC | DESC], ... [WITH ROLLUP]]
+    [HAVING where_condition]
+    [ORDER BY {col_name | expr | position}
+      [ASC | DESC], ...]
+    [LIMIT {[offset,] row_count | row_count OFFSET offset}]
+    [PROCEDURE procedure_name(argument_list)]
+    [INTO OUTFILE 'file_name'
+        [CHARACTER SET charset_name]
+        export_options
+      | INTO DUMPFILE 'file_name'
+      | INTO var_name [, var_name]]
+    [FOR UPDATE | LOCK IN SHARE MODE]]
+
+SELECT is used to retrieve rows selected from one or more tables, and
+can include UNION statements and subqueries. See [HELP UNION], and
+http://dev.mysql.com/doc/refman/5.7/en/subqueries.html.
+
+The most commonly used clauses of SELECT statements are these:
+
+o Each select_expr indicates a column that you want to retrieve. There
+  must be at least one select_expr.
+
+o table_references indicates the table or tables from which to retrieve
+  rows. Its syntax is described in [HELP JOIN].
+
+o SELECT supports explicit partition selection using the PARTITION with
+  a list of partitions or subpartitions (or both) following the name of
+  the table in a table_reference (see [HELP JOIN]). In this case, rows
+  are selected only from the partitions listed, and any other
+  partitions of the table are ignored. For more information and
+  examples, see
+  http://dev.mysql.com/doc/refman/5.7/en/partitioning-selection.html.
+
+  SELECT ... PARTITION from tables using storage engines such as MyISAM
+  that perform table-level locks (and thus partition locks) lock only
+  the partitions or subpartitions named by the PARTITION option.
+
+  See
+  http://dev.mysql.com/doc/refman/5.7/en/partitioning-limitations-locki
+  ng.html, for more information.
+
+o The WHERE clause, if given, indicates the condition or conditions
+  that rows must satisfy to be selected. where_condition is an
+  expression that evaluates to true for each row to be selected. The
+  statement selects all rows if there is no WHERE clause.
+
+  In the WHERE expression, you can use any of the functions and
+  operators that MySQL supports, except for aggregate (summary)
+  functions. See
+  http://dev.mysql.com/doc/refman/5.7/en/expressions.html, and
+  http://dev.mysql.com/doc/refman/5.7/en/functions.html.
+
+SELECT can also be used to retrieve rows computed without reference to
+any table.
+
+URL: http://dev.mysql.com/doc/refman/5.7/en/select.html
+
 
 3. What is the difference between using the monitor in interactive mode and using
 the monitor in batch mode?
 
+    Interactive mode is a REPL (Read / Evaluate / Print / Loop), a user can use interactive mode to actively interact with MySQL and get results back.
+    Using the monitor in batch mode allows you to enter statements for the monitor into a text file and have the monitor execute these statements.
+
 4. What do the monitor user, password, and database options do?
 
+    user: Username to use when connecting to the MySQL server via the monitor.
+    password: Password to use for user used with user option.
+    database: Database to use when connection via thew monitor to a MySQL server.
