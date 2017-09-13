@@ -32,6 +32,13 @@ Additional Exercises (not in the book):
 
 2) Document where important files should be.
 
+    Your mileage will vary, depending on OS used.
+    For my Mac install:
+        Data files : /usr/local/var/mysql/mysql
+        Config file: /usr/local/etc/my.cnf
+        Libraries: /usr/local/lib
+        Binary: /usr/local/Cellar/mysql/5.7.19/bin/mysqld
+
 
 Do not forget to do a pull request when your homework is complete.
 http://www.meetup.com/Virtual-Tech-Self-Study/messages/boards/thread/29963152/
