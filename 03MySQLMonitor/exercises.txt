@@ -92,7 +92,15 @@ the monitor in batch mode?
     database: Database to use when connection via thew monitor to a MySQL server.
 =======
 5. Explain what each of the characters at the end of SHOW DATABASES does by explaining the output of:
+
  a. SHOW DATABASES;
+    The semicolon telle MySQL that the user has finished entering a statement and it should parse and execute it.
+
  b. SHOW DATABASES\G
+    This tells MySQL we have finished entering a statement and it should parse it, but display output vertically
+
  c. SHOW DATABASES\c
+    This instructs MySQL to clear the current input statement, so any statement prior to \c is not parsed.
+
  d. SHOW DATABASES\q
+    The \q option quits MySQL.
