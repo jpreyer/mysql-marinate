@@ -79,6 +79,8 @@ URL: http://dev.mysql.com/doc/refman/5.7/en/select.html
 
 3. What is the difference between using the monitor in interactive mode and using
 the monitor in batch mode?
+=======
+3. What is the difference between using the monitor in interactive mode and using the monitor in batch mode?
 
     Interactive mode is a REPL (Read / Evaluate / Print / Loop), a user can use interactive mode to actively interact with MySQL and get results back.
     Using the monitor in batch mode allows you to enter statements for the monitor into a text file and have the monitor execute these statements.
@@ -88,3 +90,9 @@ the monitor in batch mode?
     user: Username to use when connecting to the MySQL server via the monitor.
     password: Password to use for user used with user option.
     database: Database to use when connection via thew monitor to a MySQL server.
+=======
+5. Explain what each of the characters at the end of SHOW DATABASES does by explaining the output of:
+ a. SHOW DATABASES;
+ b. SHOW DATABASES\G
+ c. SHOW DATABASES\c
+ d. SHOW DATABASES\q
